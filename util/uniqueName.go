@@ -7,7 +7,7 @@ import (
 
 // IsValidUniqueName ensures that the string represents a valid unique name. Lowercase alphanumeric only. 4-32 characters.
 func IsValidUniqueName(uniqueName string) bool {
-	match, err := regexp.Match("^[a-z0-9]{4,32}$", []byte(uniqueName))
+	match, err := regexp.Match("^[a-z0-9_\\-\\.]{1,64}$", []byte(uniqueName))
 	if err != nil {
 		return false
 	}
